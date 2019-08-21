@@ -1,0 +1,23 @@
+<div class="party-container">
+    <div *ngIf="message.from=='client'" class="client">
+
+        <div class="left">
+            <img src="assets/images/client.png" alt="">
+        </div>
+        <div class="right">
+            <div> {{message.name}}</div>
+            <div> {{message.content}} </div>
+        </div>
+    </div>
+    <div *ngIf="message.from=='server'" class="server">
+
+        <div class="right">
+            <div> {{message.name}}</div>
+            <div> {{message.content}} </div>
+        </div>
+        <div>
+            <img src="assets/images/server.jpg" alt="">
+        </div>
+    </div>
+
+</div>

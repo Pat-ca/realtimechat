@@ -1,1 +1,140 @@
 /* You can add global styles to this file, and also import other style files */
+
+$brand-color-1: #00308F;
+$brand-color-2: #446FC8;
+$brand-color-3: #28E6E1;
+$brand-color-4: #F5F8FF;
+$text-color: #313235;
+$text-color__light: #ffffff;
+$buttonColor: var(--brand-color-1);
+$buttonColor__hover: #446FC8;
+$buttonTextColor: var(--brand-color-3);
+$buttonTextColor__hover: #F5F8FF;
+$plum-primary: #AA0959;
+$grey-medium: #C2C5CC;
+$grey-dark-2: #5A5C5F;
+$greyscale-dark-2: #5A5C5F;
+$grey-shade-1: #78746E;
+$grey-shade-5: #353431;
+$blue-tint-5: #004DE6;
+$blue-tint-4: #3D6ECF;
+
+.global__form {
+padding: 0;
+min-width: 343px;
+
+.ms-field {
+  position: relative;
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.ms-label {
+  color: $grey-dark-2;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 21px;
+  position: absolute;
+  pointer-events: none;
+  top: 10px;
+  -webkit-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+.ms-input {
+  color: $text-color;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 24px;
+  padding-bottom: 13px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #D3DFEF;
+  opacity: 0.8;
+  background: none;
+}
+
+.ms-input:focus {
+  outline: none;
+}
+
+.ms-input:focus ~ .ms-label, .ms-input:valid:required ~ .ms-label, .ms-input.populated ~ .ms-label, .ms-label-invalid {
+  top: -20px;
+  color: $blue-tint-4;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 19px;
+  /* identical to box height */
+  letter-spacing: 0.01em;
+}
+
+
+.ms-label-invalid {
+  color: rgb(160, 0, 0);
+}
+/* BOTTOM BARS ================================= */
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.bar:before, .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: $brand-color-1;
+  -webkit-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+.ms-bar-invalid {
+  color: rgb(160, 0, 0);
+  border-color: rgb(160, 0, 0);
+}
+/* active state */
+.ms-input:focus ~ .bar:before, .ms-input:focus ~ .bar:after {
+  width: 50%;
+}
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+/* active state */
+.ms-input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+}

@@ -1,0 +1,19 @@
+<div class="chat-container">
+  <ul #chatbox class="chat-box">
+    <li *ngFor="let message of messages">
+      <app-party [message]='message'></app-party>
+    </li>
+  </ul>
+  <div class="message-box">
+    
+    <div class="global__form">
+      <div class="ms-field field-input">
+        <input class="ms-input" type="text" [ngClass]="{'populated': content }" id="txtMessage" maxlength="180"
+          [(ngModel)]="content" (keyup.enter)="sendMessage(content)">
+        <label class="ms-label" for="txtMessage">Type your message here ...</label>
+        <span class="highlight"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </div>
+</div>
