@@ -1,5 +1,5 @@
 # Chat
-
+Open source project. Real time chat. Backend will be nodejs+express. There are two angular projects, one for client, one for operation.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.1.
 
 ## Development server
